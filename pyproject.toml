@@ -1,0 +1,30 @@
+
+[project]
+name = "python-dpi"
+version = "0.1.0"
+description = "Educational Deep Packet Inspection (DPI) engine built in Python for a Computer Networks course project."
+authors = [
+    { name = "Sanchari", email = "ssanchari84@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "scapy>=2.5.0",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dpi"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
